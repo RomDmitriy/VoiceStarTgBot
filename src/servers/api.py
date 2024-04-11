@@ -96,6 +96,9 @@ async def work():
 		filename: str = link.split('\\')[1]
 		link = getenv('AI_FILES_LINK') + '/gradio/' + link
 
+		if is_debug:
+			print('Link: ', link)
+
 		file = requests.get(link)
 		
 		await api_worker_handler(element.user_id, (file.content, filename), file.status_code)

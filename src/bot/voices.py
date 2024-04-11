@@ -2,8 +2,8 @@ from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 
 # Словарь доступных голосов и соответсвующим им техническим названиям
 voices: dict[str, str] = {
-	"📣Голос Геральта📣": "vsevolodutils",
-	"📣Голос Гуры📣": "gura",
+	"📣Голос Геральта📣": "vsevolodutils_77",
+	"📣Голос Гуры📣": "gura_15",
 }
 
 # Массив голосов, которые может выбрать пользователь
@@ -12,5 +12,5 @@ userFriendlyVoices = ReplyKeyboardMarkup(keyboard=list(map(lambda x: [KeyboardBu
 # Словарь сэмплов
 voice_samples: dict[str, int] = {
 	"vsevolodutils": 77,
-	"gura": 4
+	"gura": 15
 }
