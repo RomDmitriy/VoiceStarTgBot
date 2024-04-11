@@ -64,8 +64,8 @@ async def work():
 				element.voice[1],		# Voice Chunks
 				1, 						# Candidates (do not change)
 				3, 						# Seed
-				2,						# Samples
-				2,						# Iterations. Minimum: 2
+				16,						# Samples
+				40,						# Iterations. Minimum: 2
 				0.2,					# Temperature
 				"DDIM",					# Diffusion Samples
 				8,						# Pause size
