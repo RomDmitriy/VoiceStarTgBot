@@ -1,5 +1,5 @@
 from src.servers.api import add_request
-from src.misc.stateManager import StageManager, StageValue
+from src.misc.stateManager import StatusManager, StageValue
 from src.bot.voices import userFriendlyVoices
 
 from aiogram.types import Message
@@ -8,7 +8,7 @@ from aiogram.types import Message
 async def send_confirm_message(message: Message):
 	try:
 		# Блокируем пользователя
-		StageManager.setState(message.from_user.id, StageValue.IS_WORKING)
+		StatusManager.setState(message.from_user.id, StageValue.IS_WORKING)
 
 		# Оформляем заявку
 		place = await add_request(message.from_user.id, message.text)

@@ -1,4 +1,4 @@
-from src.misc.stateManager import StageManager, StageValue
+from src.misc.stateManager import StatusManager, StageValue
 from src.servers.api import getQueueStr
 from src.misc.debug import is_debug
 from src.bot.voices import voices
@@ -40,7 +40,7 @@ async def handle_message(message: Message) -> None:
 		return
 
 	# Получаем состояние пользователя
-	state = StageManager.getState(message.from_user.id)
+	state = StatusManager.getState(message.from_user.id)
 	match state:
 		case StageValue.IS_READY:
 			# Если пользователь свободен

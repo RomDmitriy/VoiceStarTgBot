@@ -1,4 +1,4 @@
-from src.misc.stateManager import StageManager, StageValue
+from src.misc.stateManager import StatusManager, StageValue
 from src.servers.api import getPosition
 from src.bot.handlers.send_confirm_message import send_confirm_message
 
@@ -9,5 +9,5 @@ async def send_wait_message(message: Message):
 	try:
 		await message.answer(f'Твой текст всё ещё ожидает своей очереди😔\n Твоя позиция - {getPosition(message.from_user.id)}')
 	except IndexError:
-		StageManager.setState(message.from_user.id, StageValue.IS_READY)
+		StatusManager.setState(message.from_user.id, StageValue.IS_READY)
 		await send_confirm_message(message)

@@ -27,6 +27,6 @@ class _StateManager:
 		redisServer.set(str(user_id) + f'_{self._category}', state)
 
 # Менеджер состояний
-StageManager = _StateManager('stage')
+StatusManager = _StateManager('status')
 # Менеджер выбора голоса
 VoiceChooseManager = _StateManager('voice')
